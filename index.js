@@ -18,9 +18,7 @@ app.get("/tags", postController.getAllTags);
 const startApp = () => {
   try {
     mongoose
-      .connect(
-        `mongodb+srv://architect:howLkltyEbsKYHn8@cluster0.dwu5lis.mongodb.net/mern-project?retryWrites=true&w=majority`
-      )
+      .connect(process.env.MONGODB_URI)
       .then(() => {
         console.log("Connection successfully...");
       })

@@ -20,7 +20,7 @@ class AuthController {
         {
           _id: user._id,
         },
-        "parol123",
+        process.env.JWT_SECRET,
         {
           expiresIn: "30d",
         }
@@ -60,7 +60,7 @@ class AuthController {
         {
           _id: user._id,
         },
-        "parol123",
+        process.env.JWT_SECRET,
         { expiresIn: "30d" }
       );
       res.status(200).json({
